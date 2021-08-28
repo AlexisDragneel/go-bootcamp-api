@@ -9,6 +9,7 @@ describe('PokemonController', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       controllers: [PokemonController],
+      providers: [PokemonService]
     }).overrideProvider(PokemonService)
         .useValue(mockPokemonService)
         .compile();
@@ -19,4 +20,13 @@ describe('PokemonController', () => {
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
+
+  it('should return a list of pokemons', () => {
+    expect(controller.get({})).toBe(mockPokemonService.getAll());
+  })
+
+  it('should return one pokemon', () => {
+    expect(controller.getById(1)).toBe(mockPokemonService.getById(1));
+  })
+
 });

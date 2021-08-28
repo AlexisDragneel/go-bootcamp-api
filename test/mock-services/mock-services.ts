@@ -7,6 +7,8 @@ export const mockPokemonService = {
       id: 1,
       name: 'bulbasaur',
       url: 'https://pokeapi.co/api/v2/pokemon/1/',
+      height: 7,
+      weight: 69
     },
   ],
 
