@@ -1,3 +1,3 @@
-export default interface PokeApiModel {
-    results: Array<any>;
+export interface PokeApiGetAllModel {
+  results: Array<any>;
 }
